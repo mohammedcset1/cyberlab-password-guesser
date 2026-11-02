@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f1d">
+  <meta name="description" content="Educational three-digit brute-force password guessing simulator.">
+  <title>CyberLab | Password Guesser</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><span class="brand-icon">⬡</span><span>CYBER<span class="accent">LAB</span></span></div><span class="online"><i></i> SYSTEM ONLINE</span></header>
+    <section class="hero"><div class="eyebrow">EDUCATIONAL SECURITY SIMULATOR</div><div class="hero-icon" aria-hidden="true">⌁</div><h1>3-Digit <span class="accent">Password Cracker</span></h1><p>Watch a brute-force algorithm test every PIN from 000 to 999 until it finds your chosen code.</p></section>
+    <section class="panel" aria-labelledby="setup-title"><div class="panel-head"><h2 id="setup-title">01 <span>Target Configuration</span></h2><span class="pill">LOCAL DEMO</span></div><label for="pin">Choose your secret 3-digit PIN</label><div class="pin-row"><input id="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" placeholder="e.g. 527" autocomplete="off" aria-describedby="pin-help"><button id="togglePin" class="subtle" type="button" aria-label="Show password">SHOW</button></div><p class="hint" id="pin-help">Exactly 3 digits (000–999). Your PIN stays in this browser.</p><div class="speed-line"><label for="speed">Attack speed</label><span id="speedValue">Fast · 20 ms/guess</span></div><input id="speed" type="range" min="1" max="4" value="3" step="1"><div class="speed-ends"><span>Slow</span><span>Instant</span></div></section>
+    <section class="panel" aria-labelledby="monitor-title"><div class="panel-head"><h2 id="monitor-title">02 <span>Live Attack Monitor</span></h2><span id="statusBadge" class="status">READY</span></div><div class="guess-block"><div class="tiny">CURRENT GUESS</div><div id="guess" class="digits" aria-live="off">---</div><div id="statusText" class="status-text" role="status" aria-live="polite">Waiting for your command</div></div><div class="progress-label"><span>SEARCH PROGRESS</span><span id="percent">0.0%</span></div><div class="progress-track" role="progressbar" aria-label="Search progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><div id="progressBar" class="progress-fill"></div></div><div class="stats"><div><span>ATTEMPTS</span><strong id="attempts">0</strong></div><div><span>ELAPSED</span><strong id="elapsed">0.00s</strong></div><div><span>COMBINATIONS</span><strong>1,000</strong></div></div><div class="actions"><button id="start" class="primary" type="button">▶ START ATTACK</button><button id="pause" class="secondary" type="button" disabled>PAUSE</button><button id="reset" class="secondary" type="button">RESET</button></div></section>
+    <section class="panel log-panel" aria-labelledby="log-title"><div class="panel-head"><h2 id="log-title">03 <span>Activity Log</span></h2><span class="pill">LIVE</span></div><ol id="log" class="log" aria-live="off"><li>System ready. Enter a PIN to begin.</li></ol></section>
+    <footer>CYBERLAB · Educational brute-force simulation · No real accounts or services are accessed</footer>
+  </main>
+</body>
+</html>
